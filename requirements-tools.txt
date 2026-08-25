@@ -1,0 +1,41 @@
+# Toolchain for SCSE3040 MLOps deck authoring.
+# Install into a venv:  .venv\Scripts\pip install -r requirements-tools.txt
+# Then:                 .venv\Scripts\playwright install chromium
+
+# --- screenshot capture (scripts/capture.py) ---
+playwright
+pillow
+
+# --- PDF -> PNG, for the "render 3 representative frames" review step ---
+# Added beyond the original list: the CLAUDE.md workflow rule needs a
+# rasteriser and there is none on this machine. Remove if you'd rather
+# review the PDF directly.
+pymupdf
+
+# --- demo stack used in the running delivery-time project ---
+mlflow
+scikit-learn
+pandas
+fastapi
+uvicorn
+# dvc: added 2026-08-19 for L06 (data versioning) and Lab 3, per the
+# lecture map's "new toolchain" section. Terminal outputs on the L06
+# slides were produced with DVC 3.67.1.
+dvc
+
+# --- lab practicals: authoring and QA (scripts/build_labs.py, check_lab.py) ---
+# nbformat builds the notebooks, nbclient executes them, ipykernel is the
+# kernel they run in, psutil measures peak memory against the 8 GB budget.
+# After installing, register the kernel once:
+#   .venv\Scripts\python -m ipykernel install --sys-prefix --name python3
+nbformat
+nbclient
+ipykernel
+psutil
+
+# httpx is NOT authoring-only: fastapi.testclient needs it, and P07 and P11
+# call the delivery service through TestClient rather than starting a server.
+httpx
+
+# Students additionally need jupyterlab to open the notebooks; that is in
+# labs/SETUP.md rather than here, because it is not needed to build a deck.
