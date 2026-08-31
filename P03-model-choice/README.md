@@ -64,9 +64,11 @@ it, it trains faster, and it breaks less.
 5. **Model 3: the same tree, but shallow**
 6. **Model 4: a random forest**
 7. **Put the four results side by side**
-8. **Stop trusting one split: cross-validation**
-9. **Tune one setting, properly**
-10. **Choose, and be able to say why**
+8. **Draw the gap, because a table makes you read**
+9. **Stop trusting one split: cross-validation**
+10. **Tune one setting, properly**
+11. **Draw the sweep, because ten numbers hide a shape**
+12. **Choose, and be able to say why**
 
 ## Your turn
 
@@ -95,6 +97,7 @@ it, it trains faster, and it breaks less.
 - scikit-learn --- Cross-validation --- <https://scikit-learn.org/stable/modules/cross_validation.html>
 - scikit-learn --- Decision trees --- <https://scikit-learn.org/stable/modules/tree.html>
 - scikit-learn --- Ensemble methods --- <https://scikit-learn.org/stable/modules/ensemble.html>
+- matplotlib --- Quick start guide --- <https://matplotlib.org/stable/users/explain/quick_start.html>
 
 ---
 
