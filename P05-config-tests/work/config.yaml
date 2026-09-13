@@ -1,0 +1,18 @@
+# Settings for the delivery-time model.
+# Change values here, never in the code.
+
+data:
+  path: ../data/delivery_times.csv
+  features:
+    - distance_km
+    - prep_time_min
+    - traffic_level
+    - rain
+  target: delivery_min
+
+split:
+  test_size: 0.2
+  seed: 42
+
+model:
+  name: linear_regression
