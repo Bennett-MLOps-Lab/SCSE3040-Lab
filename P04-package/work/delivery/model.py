@@ -7,8 +7,7 @@ from sklearn.metrics import mean_absolute_error
 
 def train_model(X_train, y_train):
     """Fit a linear regression and hand it back."""
-    return LinearRegression().fit(X_train, y_train)
-
+    return LinearRegression(fit_intercept=False).fit(X_train, y_train)
 
 def evaluate(model, X_test, y_test):
     """Mean absolute error, in minutes."""
