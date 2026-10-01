@@ -100,3 +100,6 @@ minutes were we off by? It is in minutes, so anyone can understand it.
 
 *Open `P02.ipynb` in Jupyter and work through it top to bottom.
 The notebook contains everything in this handout, plus the code.*
+## How to Run
+
+Open `P02.ipynb` in Jupyter Notebook or VS Code and run the cells from top to bottom.
