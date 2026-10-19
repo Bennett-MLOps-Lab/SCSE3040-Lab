@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: delivery-api-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: delivery-api
+  ports:
+    - port: 80
+      targetPort: 8000
