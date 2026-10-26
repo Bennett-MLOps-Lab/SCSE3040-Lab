@@ -1,0 +1,25 @@
+name: CI
+true:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Get the code
+      uses: actions/checkout@v4
+    - name: Install Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+        cache: pip
+    - name: Install the libraries
+      run: pip install -r requirements.txt
+    - name: Run the tests
+      run: pytest -q
+    - name: Check the config file is valid
+      run: python -c "import yaml, pathlib; yaml.safe_load(pathlib.Path('config.yaml').read_text())"
