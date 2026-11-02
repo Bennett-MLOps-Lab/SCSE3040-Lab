@@ -1,0 +1,2 @@
+rows: 600
+mae_minutes: 1.925
