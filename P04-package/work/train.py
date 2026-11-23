@@ -15,15 +15,17 @@ def main():
     data_path = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_DATA
 
     orders = load_orders(data_path)
-    X_train, X_test, y_train, y_test = split_orders(orders)
-    model = train_model(X_train, y_train)
-    mae = evaluate(model, X_test, y_test)
+X_train, X_test, y_train, y_test = split_orders(orders)
 
-    save_model(model, Path(__file__).parent / "model.joblib")
+print(f"Training model on {len(X_train)} training rows")
+model = train_model(X_train, y_train)
+mae = evaluate(model, X_test, y_test)
 
-    print(f"rows: {len(orders)}")
-    print(f"MAE: {mae:.2f}")
-    return 0
+save_model(model, Path(__file__).parent / "model.joblib")
+
+print(f"rows: {len(orders)}")
+print(f"MAE: {mae:.2f}")
+return 0
 
 
 if __name__ == "__main__":
